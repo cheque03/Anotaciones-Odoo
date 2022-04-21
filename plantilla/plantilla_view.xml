@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+	<data>
+		<!-- Seccion del formulario -->
+		<record id="view_form_plantilla" model = "ir.ui.view">
+			<field name="name" >Platilla test</field>
+			<field name="model">plantilla.test</field>
+			<field name="arch" type="xml">
+				<form string="plantilla">
+					<header>
+						<!--seccion para agregar botonoes -->
+					</header>
+					<sheet>
+						<group name="group_left">
+							<field name="name"/>
+						</group>
+						
+					</sheet>
+				</form>
+			</field>
+		</record>
+		<!-- Seccion de la vista de arbol -->
+		<record id="view_tree_plantilla" model="ir.ui.view">
+			<field name="name">Plantilla tree</field>
+			<field name="model">plantilla.test</field>
+			<field name="arch" type="xml">
+				<tree>
+					<field name="name"/>
+				</tree>
+				
+			</field>
+		</record>
+		<!-- Action to open plantilla list -->
+		<act_window id="action_plantilla" name="Plantilla" res_model="plantilla.test" view_mode="tree,form"/>
+		<!--Crea la opcion en el Menu principal de odoo -->
+		<menuitem id = "menu_root_plantilla" name="Plantilla" sequence="180" action = "action_plantilla"/>
+		
+	</data>
+</openerp>
